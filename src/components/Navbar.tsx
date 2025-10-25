@@ -8,19 +8,20 @@ export const Navbar: FC = () => {
         <img src="/logo.svg" alt="Apple Logo" />
 
         <ul>
-          {navLinks.map(({ label }) => (
+          {navLinks.map(({ label, href }) => (
             <li key={label}>
-              <a href={label}>{label}</a>
+              <a href={href}>{label}</a>
             </li>
           ))}
         </ul>
 
         <div className="flex-center gap-3">
-          <button>
+
+          <button type="button">
             <img src="/search.svg" alt="Search" />
           </button>
 
-          <button>
+          <button type="button">
             <img src="/cart.svg" alt="Cart" />
           </button>
         </div>
