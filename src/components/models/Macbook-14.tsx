@@ -13,7 +13,7 @@ import { useEffect, type ComponentPropsWithoutRef } from "react";
 import type { GLTFResult } from "../../types";
 import useMacBookStore from "../../store";
 import { noChangeParts } from "../../constants";
-import { Color, Object3D } from "three";
+import { Color, Object3D, SRGBColorSpace } from "three";
 
 type MacBookModel14Props = ComponentPropsWithoutRef<"group">;
 
@@ -24,6 +24,8 @@ export default function MacBookModel14(props: MacBookModel14Props) {
   ) as GLTFResult;
 
   const texture = useTexture("/screen.png");
+  texture.colorSpace = SRGBColorSpace;
+  texture.needsUpdate = true;
 
   useEffect(() => {
     scene.traverse((child: InstanceType<typeof Object3D>) => {
@@ -124,7 +126,6 @@ export default function MacBookModel14(props: MacBookModel14Props) {
       />
       <mesh
         geometry={nodes.Object_123.geometry}
-        material={materials.sfCQkHOWyrsLmor}
         rotation={[Math.PI / 2, 0, 0]}
       >
         <meshBasicMaterial map={texture} />

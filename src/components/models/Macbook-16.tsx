@@ -11,7 +11,7 @@ Title: macbook pro M3 16 inch 2024
 import { useEffect, type ComponentPropsWithoutRef } from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
 import type { GLTFResult } from "../../types";
-import { Color, Object3D } from "three";
+import { Color, Object3D, SRGBColorSpace } from "three";
 import { noChangeParts } from "../../constants";
 import useMacBookStore from "../../store";
 
@@ -24,6 +24,8 @@ export default function MacBookModel16(props: MacBookModel16Props) {
   ) as GLTFResult;
 
   const texture = useTexture("/screen.png");
+  texture.colorSpace = SRGBColorSpace;
+  texture.needsUpdate = true;
 
   useEffect(() => {
     scene.traverse((child: InstanceType<typeof Object3D>) => {
@@ -124,7 +126,6 @@ export default function MacBookModel16(props: MacBookModel16Props) {
       />
       <mesh
         geometry={nodes.Object_123.geometry}
-        material={materials.sfCQkHOWyrsLmor}
         rotation={[Math.PI / 2, 0, 0]}
       >
         <meshBasicMaterial map={texture} />
