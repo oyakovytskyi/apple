@@ -10,3 +10,11 @@ export type NavLink = {
   label: string;
   href: string;
 };
+
+export type PerformanceImgPosition = {
+  id: string;
+  left?: number;
+  right?: number;
+  bottom?: number;
+  transform?: string;
+};

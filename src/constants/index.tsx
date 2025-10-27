@@ -1,4 +1,4 @@
-import type { NavLink } from "../types";
+import type { NavLink, PerformanceImgPosition } from "../types";
 
 export const navLinks: NavLink[] = [
   { label: "Store", href: "#store" },
@@ -38,7 +38,7 @@ export const performanceImages = [
     { id: "p7", src: "/performance7.png" },
 ];
 
-export const performanceImgPositions = [
+export const performanceImgPositions: PerformanceImgPosition[] = [
     {
         id: "p1",
         left: 5,
