@@ -7,7 +7,7 @@ Experience seamless 3D interactions, cinematic animations, and video-textured re
 
 ## 🌐 Live Preview
 
-🔗 [**View Demo**]([Link](https://beautiful-torrone-5ea809.netlify.app/))  
+🔗 [**View Demo**](https://beautiful-torrone-5ea809.netlify.app/)
 
 ---
 
